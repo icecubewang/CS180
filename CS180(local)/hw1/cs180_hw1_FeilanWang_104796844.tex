@@ -1,0 +1,252 @@
+%% LyX 2.2.3 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[english]{article}
+\usepackage[latin9]{inputenc}
+\usepackage{babel}
+\begin{document}
+CS 180
+
+HW1
+
+Feilan Wang
+
+UID: 104796844
+
+\textemdash \textemdash \textemdash \textemdash \textemdash \textemdash \textemdash{}
+
+Q2: Suppose you have algorithms with the six running times listed
+below. (Assume these are the exact number of operatoins performed
+as a function of the input size n.) Suppose you have a computer that
+can perform $10^{10}$ operations per second, and you need to compute
+a result in at most an hour of computation. For each of the algorithms,
+what is the largest input size n for which you would be able to get
+the result within an hour? 
+
+(a) $n^{2}$
+
+$10^{10}$ operations per second = $10^{10}${*} 3600 operations per
+hour = 3.6 {*} $10^{13}$ operations per hour
+
+For $n^{2}$ \textless{}= 3.6 {*} $10^{13}$, 
+
+n \textless{}= $\sqrt{36*10^{12}}$ = 6 {*} $10^{6}$
+
+(b) $n^{3}$
+
+Similarly, 
+
+For $n^{3}$\textless{}= 3.6 {*} $10^{13}$,
+
+n \textless{}= $\sqrt[3]{3.6*10^{13}}$ = 3.30 {*} 10$^{4}$
+
+(c) 100$n^{2}$
+
+Similarly,
+
+For 100$n^{2}$\textless{}= 36 {*} $10^{12}$,
+
+$n^{2}$\textless{}= 36 {*} $10^{10}$,
+
+$n$ \textless{}= 6 {*} $10^{5}$
+
+(d) n log n
+
+Similarly, 
+
+For n log n \textless{} 36 {*} $10^{12}$,
+
+By ploting the graph of n log n vs the graph of 36 {*} $10^{12}$,
+
+The point of intersection is at 2.8891 {*} $10^{12}$
+
+(e) $2^{n}$
+
+Similarly, 
+
+For $2^{n}$\textless{}= 36 {*} $10^{12}$,
+
+By ploting the graph of $2^{n}$vs the graph of 36 {*} $10^{12}$,
+
+The point of intersection is at 45
+
+(f) $2^{2^{n}}$
+
+Similarly, For $2^{2^{n}}$\textless{}= 36 {*} $10^{12}$,
+
+By ploting the graph of $2^{2^{n}}$vs the graph of 36 {*} $10^{12}$,
+
+The point of intersection is roughly at 5. 
+
+\textemdash \textemdash \textemdash \textemdash \textemdash \textemdash \textemdash{}
+
+Q3: Take the following list of functions and arrange them in ascending
+order of growth rate. That is, if function g(n) immediately follows
+function f(n) in your list, then it should be the case that f(n) is
+O(g(n)).
+
+f1(n) = $n^{2.5}$
+
+f2(n) = $\sqrt{2n}$
+
+f3(n) = n + 10
+
+f4(n) = $10^{n}$
+
+f5(n) = $100^{n}$
+
+f6(n) = $n^{2}$log n
+
+Firstly, compare f1 with f6:
+
+log n = $n^{x}$for very small x such that x \textless{} 0.5,
+
+Therefore, $n^{2}$log n \textless{} $n^{2.5}$,
+
+which means f6(n) is O(f1(n)).
+
+Then, by looking at the power, we know that f2(n) \textless{} f3(n)
+\textless{} f6(n) \textless{} f1(n). 
+
+On the other hand, f4(n) and f5(n) are exponential terms, so they
+grow much faster than the other 4 functions.
+
+==\textgreater{} f2(n) \textless{} f3(n) \textless{} f6(n) \textless{}
+f1(n) \textless{} f4(n) \textless{} f5(n)
+
+\textemdash \textemdash \textemdash \textemdash \textemdash \textemdash \textemdash{}
+
+Q7: There's a class of folk songs and holiday songs in which each
+verse consists of the previous verse, with one extra line added on.
+``The Twelve Days of Christmas'' has this property; for example,
+when you get to the fifth verse, you sing about the five golden rings
+and then, reprising the lines from the fourth verse, also cover the
+four calling birds, the three French hens, the two turtle doves, and
+of course the partridge in the pear tree. The aramaic song ``Had
+gadya'' from the Passover Haggadah works like this as well, as do
+many other songs. 
+
+These songs tend to last a long time, despite having relatively short
+scripts. In particular, you can convey the words plus instructions
+for one of these songs by specifying just the new line that is added
+in each verse, without having to write out all the previous lines
+each time. (So the phrase ``five golden rings'' only has to be written
+once, even though it will appear in verses five and onwards.)
+
+There's something asymptotic that can be analyzed here. Suppose, for
+concreteness, that each line has a length that is bounded by a constant
+c, and suppose that the song, when sung out loud, runs for n words
+total. Show how to encode such a song using a script that has length
+f(n), for a function f(n) that grows as slowly as possible. 
+
+Answer:
+
+Suppose we hve the script with total L lines. 
+
+line 1 
+
+line 2
+
+...
+
+line L
+
+for (int i = 0; i \textless{} L; i++) 
+
+for (int j = 0; j \textless{} i; j++)
+
+sing line j
+
+The song is sung as following:
+
+line1
+
+line1 line2
+
+line1 line2 line3
+
+...
+
+line1 line2 line3 ... lineL
+
+n = 1 + 2 + 3 + ... + L = $\frac{L(L+1)}{2}$
+
+n \textgreater{}= $\frac{L^{2}}{2}$
+
+L \textless{}= $\sqrt{2n}$
+
+f(n) = O($\sqrt{n}$).
+
+\textemdash \textemdash \textemdash \textemdash \textemdash \textemdash \textemdash{}
+
+Q8: You are doing some stress-testing on various models of glass jars
+to determine the height from which they can be dropped and still not
+break. The setup for this experiment, on a particular type of jar,
+is as follows. You have a ladder with n rungs, and you want to find
+the highest rung from which you can drop a copy of the jar and not
+have it break. We call this the highest safe rung. 
+
+It might be natural to try binary search: drop a jar from the middle
+rung, see if it breaks, and then recursively try from rung n/4 or
+3n/4 depending on the outcome. But this has the drawback that you
+could break a lot of jars in finding the answer. If your primary goal
+were to conserve jars, on the other hand, you could try the following
+strategy. Start by dropping a jar from the first rung, then the second
+rung, and so forth, climbing one higher each time until the jar breaks.
+In this way, you only need a single jar \textendash{} at the moment
+it breaks, you have to correct answer \textendash{} but you may have
+to drop it n times (rather than log n as in the binary search solution). 
+
+So here is the trade-off: it seems you can perform fewer drops if
+you're willing to break more jars. To understand better how this trade-off
+works at a quantitative level, let's consider how to run this experiment
+given a fixed ``budget'' of k \textgreater{}= 1 jars. In other words,
+you have to determine the correct answer \textendash{} the highest
+safe rung \textendash{} and can use at most k jars in doing so. 
+
+(a) Suppose you are given a budget of k =2 jars. Describe a strategy
+for finding the highest safe rung that requires you to drop a jar
+at most f(n) times, for some function f(n) that grows slower than
+linearly. (In other words, it should be the case that lim$_{n->infinity}$f(n)/n
+= 0.)
+
+Answer: 
+
+Let n be the total number of rungs.
+
+For the first jar, drop it from the $1*\sqrt{n}$ rung, see if it
+breaks. 
+
+If breaks, then, for the second jar, start to drop it from the first
+rung and move one rung higher each time. 
+
+If the first jar does not break, then, drop it from the i {*} $\sqrt{n}$
+rung, for i = 2, 3, 4, ..., $\sqrt{n}$, until the first jar breaks. 
+
+Then, when it breaks, drop the second jar from i {*} $\sqrt{n}$ +
+j rung, for j = 1, 2, 3, 4, ... until the second jar breaks. 
+
+The highest safe rung is i {*} $\sqrt{n}$ + j. 
+
+In this way, the worst case is 2$\sqrt{n}$ times, the f(n) = O($\sqrt{n}$),
+which grows slower than linearly. 
+
+(b) Now suppose you have a budget of k \textgreater{} 2 jars, for
+some given k. Describe a strategy for finding the highest safe rung
+using at most k jars. If $f_{k}$(n) denotes the number of times you
+need to drop a jar according to your strategy, then the functions
+f1, f2, f3, ... should have the property that each grows asymptotically
+slower than the previous one: lim$_{n->infinity}$fk(n)/fk-1(n) =
+0 for each k. 
+
+Answer:
+
+Let n be the total number of rungs. 
+
+Similarly to part (a), divide the rungs into $\sqrt[k]{n}$, and each
+jar will break in each level of the $\sqrt[k]{n}$rungs. 
+
+The worst case is that the jar always breaks at the last level, so
+in total, we will drop it k {*} $\sqrt[k]{n}$ times. 
+
+f(n) = O($\sqrt[k]{n}$), which is smaller than O(n). 
+\end{document}

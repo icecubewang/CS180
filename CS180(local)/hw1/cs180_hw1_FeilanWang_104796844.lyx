@@ -1,0 +1,794 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+CS 180
+\end_layout
+
+\begin_layout Standard
+HW1
+\end_layout
+
+\begin_layout Standard
+Feilan Wang
+\end_layout
+
+\begin_layout Standard
+UID: 104796844
+\end_layout
+
+\begin_layout Standard
+———————
+\end_layout
+
+\begin_layout Standard
+Q2: Suppose you have algorithms with the six running times listed below.
+ (Assume these are the exact number of operatoins performed as a function
+ of the input size n.) Suppose you have a computer that can perform 
+\begin_inset Formula $10^{10}$
+\end_inset
+
+ operations per second, and you need to compute a result in at most an hour
+ of computation.
+ For each of the algorithms, what is the largest input size n for which
+ you would be able to get the result within an hour? 
+\end_layout
+
+\begin_layout Standard
+(a) 
+\begin_inset Formula $n^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $10^{10}$
+\end_inset
+
+ operations per second = 
+\begin_inset Formula $10^{10}$
+\end_inset
+
+* 3600 operations per hour = 3.6 * 
+\begin_inset Formula $10^{13}$
+\end_inset
+
+ operations per hour
+\end_layout
+
+\begin_layout Standard
+For 
+\begin_inset Formula $n^{2}$
+\end_inset
+
+ <= 3.6 * 
+\begin_inset Formula $10^{13}$
+\end_inset
+
+, 
+\end_layout
+
+\begin_layout Standard
+n <= 
+\begin_inset Formula $\sqrt{36*10^{12}}$
+\end_inset
+
+ = 6 * 
+\begin_inset Formula $10^{6}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(b) 
+\begin_inset Formula $n^{3}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Similarly, 
+\end_layout
+
+\begin_layout Standard
+For 
+\begin_inset Formula $n^{3}$
+\end_inset
+
+<= 3.6 * 
+\begin_inset Formula $10^{13}$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+n <= 
+\begin_inset Formula $\sqrt[3]{3.6*10^{13}}$
+\end_inset
+
+ = 3.30 * 10
+\begin_inset Formula $^{4}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(c) 100
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $n^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Similarly,
+\end_layout
+
+\begin_layout Standard
+For 100
+\begin_inset Formula $n^{2}$
+\end_inset
+
+<= 36 * 
+\begin_inset Formula $10^{12}$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $n^{2}$
+\end_inset
+
+<= 36 * 
+\begin_inset Formula $10^{10}$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $n$
+\end_inset
+
+ <= 6 * 
+\begin_inset Formula $10^{5}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(d) n log n
+\end_layout
+
+\begin_layout Standard
+Similarly, 
+\end_layout
+
+\begin_layout Standard
+For n log n < 36 * 
+\begin_inset Formula $10^{12}$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+By ploting the graph of n log n vs the graph of 36 * 
+\begin_inset Formula $10^{12}$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+The point of intersection is at 2.8891 * 
+\begin_inset Formula $10^{12}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+(e) 
+\begin_inset Formula $2^{n}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Similarly, 
+\end_layout
+
+\begin_layout Standard
+For 
+\begin_inset Formula $2^{n}$
+\end_inset
+
+<= 36 * 
+\begin_inset Formula $10^{12}$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+By ploting the graph of 
+\begin_inset Formula $2^{n}$
+\end_inset
+
+vs the graph of 36 * 
+\begin_inset Formula $10^{12}$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+The point of intersection is at 45
+\end_layout
+
+\begin_layout Standard
+(f) 
+\begin_inset Formula $2^{2^{n}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Similarly, For 
+\begin_inset Formula $2^{2^{n}}$
+\end_inset
+
+<= 36 * 
+\begin_inset Formula $10^{12}$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+By ploting the graph of 
+\begin_inset Formula $2^{2^{n}}$
+\end_inset
+
+vs the graph of 36 * 
+\begin_inset Formula $10^{12}$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+The point of intersection is roughly at 5.
+ 
+\end_layout
+
+\begin_layout Standard
+———————
+\end_layout
+
+\begin_layout Standard
+Q3: Take the following list of functions and arrange them in ascending order
+ of growth rate.
+ That is, if function g(n) immediately follows function f(n) in your list,
+ then it should be the case that f(n) is O(g(n)).
+\end_layout
+
+\begin_layout Standard
+f1(n) = 
+\begin_inset Formula $n^{2.5}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+f2(n) = 
+\begin_inset Formula $\sqrt{2n}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+f3(n) = n + 10
+\end_layout
+
+\begin_layout Standard
+f4(n) = 
+\begin_inset Formula $10^{n}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+f5(n) = 
+\begin_inset Formula $100^{n}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+f6(n) = 
+\begin_inset Formula $n^{2}$
+\end_inset
+
+log n
+\end_layout
+
+\begin_layout Standard
+Firstly, compare f1 with f6:
+\end_layout
+
+\begin_layout Standard
+log n = 
+\begin_inset Formula $n^{x}$
+\end_inset
+
+for very small x such that x < 0.5,
+\end_layout
+
+\begin_layout Standard
+Therefore, 
+\begin_inset Formula $n^{2}$
+\end_inset
+
+log n < 
+\begin_inset Formula $n^{2.5}$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Standard
+which means f6(n) is O(f1(n)).
+\end_layout
+
+\begin_layout Standard
+Then, by looking at the power, we know that f2(n) < f3(n) < f6(n) < f1(n).
+ 
+\end_layout
+
+\begin_layout Standard
+On the other hand, f4(n) and f5(n) are exponential terms, so they grow much
+ faster than the other 4 functions.
+\end_layout
+
+\begin_layout Standard
+==> f2(n) < f3(n) < f6(n) < f1(n) < f4(n) < f5(n)
+\end_layout
+
+\begin_layout Standard
+———————
+\end_layout
+
+\begin_layout Standard
+Q7: There's a class of folk songs and holiday songs in which each verse
+ consists of the previous verse, with one extra line added on.
+ 
+\begin_inset Quotes eld
+\end_inset
+
+The Twelve Days of Christmas
+\begin_inset Quotes erd
+\end_inset
+
+ has this property; for example, when you get to the fifth verse, you sing
+ about the five golden rings and then, reprising the lines from the fourth
+ verse, also cover the four calling birds, the three French hens, the two
+ turtle doves, and of course the partridge in the pear tree.
+ The aramaic song 
+\begin_inset Quotes eld
+\end_inset
+
+Had gadya
+\begin_inset Quotes erd
+\end_inset
+
+ from the Passover Haggadah works like this as well, as do many other songs.
+ 
+\end_layout
+
+\begin_layout Standard
+These songs tend to last a long time, despite having relatively short scripts.
+ In particular, you can convey the words plus instructions for one of these
+ songs by specifying just the new line that is added in each verse, without
+ having to write out all the previous lines each time.
+ (So the phrase 
+\begin_inset Quotes eld
+\end_inset
+
+five golden rings
+\begin_inset Quotes erd
+\end_inset
+
+ only has to be written once, even though it will appear in verses five
+ and onwards.)
+\end_layout
+
+\begin_layout Standard
+There's something asymptotic that can be analyzed here.
+ Suppose, for concreteness, that each line has a length that is bounded
+ by a constant c, and suppose that the song, when sung out loud, runs for
+ n words total.
+ Show how to encode such a song using a script that has length f(n), for
+ a function f(n) that grows as slowly as possible.
+ 
+\end_layout
+
+\begin_layout Standard
+Answer:
+\end_layout
+
+\begin_layout Standard
+Suppose we hve the script with total L lines.
+ 
+\end_layout
+
+\begin_layout Standard
+line 1 
+\end_layout
+
+\begin_layout Standard
+line 2
+\end_layout
+
+\begin_layout Standard
+...
+\end_layout
+
+\begin_layout Standard
+line L
+\end_layout
+
+\begin_layout Standard
+for (int i = 0; i < L; i++) 
+\end_layout
+
+\begin_layout Standard
+for (int j = 0; j < i; j++)
+\end_layout
+
+\begin_layout Standard
+sing line j
+\end_layout
+
+\begin_layout Standard
+The song is sung as following:
+\end_layout
+
+\begin_layout Standard
+line1
+\end_layout
+
+\begin_layout Standard
+line1 line2
+\end_layout
+
+\begin_layout Standard
+line1 line2 line3
+\end_layout
+
+\begin_layout Standard
+...
+\end_layout
+
+\begin_layout Standard
+line1 line2 line3 ...
+ lineL
+\end_layout
+
+\begin_layout Standard
+n = 1 + 2 + 3 + ...
+ + L = 
+\begin_inset Formula $\frac{L(L+1)}{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+n >= 
+\begin_inset Formula $\frac{L^{2}}{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+L <= 
+\begin_inset Formula $\sqrt{2n}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+f(n) = O(
+\begin_inset Formula $\sqrt{n}$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+———————
+\end_layout
+
+\begin_layout Standard
+Q8: You are doing some stress-testing on various models of glass jars to
+ determine the height from which they can be dropped and still not break.
+ The setup for this experiment, on a particular type of jar, is as follows.
+ You have a ladder with n rungs, and you want to find the highest rung from
+ which you can drop a copy of the jar and not have it break.
+ We call this the highest safe rung.
+ 
+\end_layout
+
+\begin_layout Standard
+It might be natural to try binary search: drop a jar from the middle rung,
+ see if it breaks, and then recursively try from rung n/4 or 3n/4 depending
+ on the outcome.
+ But this has the drawback that you could break a lot of jars in finding
+ the answer.
+ If your primary goal were to conserve jars, on the other hand, you could
+ try the following strategy.
+ Start by dropping a jar from the first rung, then the second rung, and
+ so forth, climbing one higher each time until the jar breaks.
+ In this way, you only need a single jar – at the moment it breaks, you
+ have to correct answer – but you may have to drop it n times (rather than
+ log n as in the binary search solution).
+ 
+\end_layout
+
+\begin_layout Standard
+So here is the trade-off: it seems you can perform fewer drops if you're
+ willing to break more jars.
+ To understand better how this trade-off works at a quantitative level,
+ let's consider how to run this experiment given a fixed 
+\begin_inset Quotes eld
+\end_inset
+
+budget
+\begin_inset Quotes erd
+\end_inset
+
+ of k >= 1 jars.
+ In other words, you have to determine the correct answer – the highest
+ safe rung – and can use at most k jars in doing so.
+ 
+\end_layout
+
+\begin_layout Standard
+(a) Suppose you are given a budget of k =2 jars.
+ Describe a strategy for finding the highest safe rung that requires you
+ to drop a jar at most f(n) times, for some function f(n) that grows slower
+ than linearly.
+ (In other words, it should be the case that lim
+\begin_inset Formula $_{n->infinity}$
+\end_inset
+
+f(n)/n = 0.)
+\end_layout
+
+\begin_layout Standard
+Answer: 
+\end_layout
+
+\begin_layout Standard
+Let n be the total number of rungs.
+\end_layout
+
+\begin_layout Standard
+For the first jar, drop it from the 
+\begin_inset Formula $1*\sqrt{n}$
+\end_inset
+
+ rung, see if it breaks.
+ 
+\end_layout
+
+\begin_layout Standard
+If breaks, then, for the second jar, start to drop it from the first rung
+ and move one rung higher each time.
+ 
+\end_layout
+
+\begin_layout Standard
+If the first jar does not break, then, drop it from the i * 
+\begin_inset Formula $\sqrt{n}$
+\end_inset
+
+ rung, for i = 2, 3, 4, ..., 
+\begin_inset Formula $\sqrt{n}$
+\end_inset
+
+, until the first jar breaks.
+ 
+\end_layout
+
+\begin_layout Standard
+Then, when it breaks, drop the second jar from i * 
+\begin_inset Formula $\sqrt{n}$
+\end_inset
+
+ + j rung, for j = 1, 2, 3, 4, ...
+ until the second jar breaks.
+ 
+\end_layout
+
+\begin_layout Standard
+The highest safe rung is i * 
+\begin_inset Formula $\sqrt{n}$
+\end_inset
+
+ + j.
+ 
+\end_layout
+
+\begin_layout Standard
+In this way, the worst case is 2
+\begin_inset Formula $\sqrt{n}$
+\end_inset
+
+ times, the f(n) = O(
+\begin_inset Formula $\sqrt{n}$
+\end_inset
+
+), which grows slower than linearly.
+ 
+\end_layout
+
+\begin_layout Standard
+(b) Now suppose you have a budget of k > 2 jars, for some given k.
+ Describe a strategy for finding the highest safe rung using at most k jars.
+ If 
+\begin_inset Formula $f_{k}$
+\end_inset
+
+(n) denotes the number of times you need to drop a jar according to your
+ strategy, then the functions f1, f2, f3, ...
+ should have the property that each grows asymptotically slower than the
+ previous one: lim
+\begin_inset Formula $_{n->infinity}$
+\end_inset
+
+fk(n)/fk-1(n) = 0 for each k.
+ 
+\end_layout
+
+\begin_layout Standard
+Answer:
+\end_layout
+
+\begin_layout Standard
+Let n be the total number of rungs.
+ 
+\end_layout
+
+\begin_layout Standard
+Similarly to part (a), divide the rungs into 
+\begin_inset Formula $\sqrt[k]{n}$
+\end_inset
+
+, and each jar will break in each level of the 
+\begin_inset Formula $\sqrt[k]{n}$
+\end_inset
+
+rungs.
+ 
+\end_layout
+
+\begin_layout Standard
+The worst case is that the jar always breaks at the last level, so in total,
+ we will drop it k * 
+\begin_inset Formula $\sqrt[k]{n}$
+\end_inset
+
+ times.
+ 
+\end_layout
+
+\begin_layout Standard
+f(n) = O(
+\begin_inset Formula $\sqrt[k]{n}$
+\end_inset
+
+), which is smaller than O(n).
+ 
+\end_layout
+
+\end_body
+\end_document
