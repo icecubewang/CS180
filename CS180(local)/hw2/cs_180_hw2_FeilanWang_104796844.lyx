@@ -1,0 +1,771 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+Feilan Wang
+\end_layout
+
+\begin_layout Standard
+104796844
+\end_layout
+
+\begin_layout Standard
+CS 180 
+\end_layout
+
+\begin_layout Standard
+HW 2
+\end_layout
+
+\begin_layout Standard
+———————
+\end_layout
+
+\begin_layout Standard
+Chapter1 Question 5:
+\end_layout
+
+\begin_layout Standard
+The Stable Matching Problem, as discussed in the text, assumes that all
+ men and women have a fully ordered list of preferences.
+ In this problem we will consider a version of the problem in which men
+ and women can be indifferent between certain options.
+ As before we have a set M of n men and set W of n women.
+ Assume each man and each woman ranks the members of the opposite gender,
+ but now we allow ties in the ranking.
+ For example (with n = 4), a woman could say that 
+\begin_inset Formula $m_{1}$
+\end_inset
+
+is ranked in first place; second place is a tie between 
+\begin_inset Formula $m_{2}$
+\end_inset
+
+and 
+\begin_inset Formula $m_{3}$
+\end_inset
+
+(she has no preference between them); and 
+\begin_inset Formula $m_{4}$
+\end_inset
+
+is in last place.
+ We will say that w prefers m to m' if m is ranked higher than m' on her
+ preference list (they are not tied).
+\end_layout
+
+\begin_layout Standard
+With indifferences in the rankings, there could be two natural notions or
+ stability.
+ And for each, we can ask about the existence of stable matchings, as follows.
+ 
+\end_layout
+
+\begin_layout Standard
+(a) A strong instability in a perfect matching S consists of a man m and
+ a woman w, such that each of m and w prefers the other to their partner
+ in S.
+ Does there always exist a perfect matching with no strong instability?
+ Either give an example of a set of men and women with preference lists
+ for which every perfect matching has a strong instability; or give an algorithe
+m that is guaranteed to find a perfect matching with no strong instability.
+ 
+\end_layout
+
+\begin_layout Standard
+(b) A weak instability in a perfect matching S consists of a man m and a
+ woman w, such that their partners in S are w' and m', respectively, and
+ one of the following holds:
+\end_layout
+
+\begin_layout Standard
+- m prefers w to w', and w either prefers m to m' or is indifferent between
+ these two choices; or
+\end_layout
+
+\begin_layout Standard
+- w prefers m to m', and m either prefers w to w' or is indifferent between
+ these two chioces.
+ 
+\end_layout
+
+\begin_layout Standard
+In other words, the pairing between m and w is either preferred by both,
+ or preferred by one while the other is indifferent.
+ Does there always exist a perfect matching with no weak instability? Either
+ give an example of a set of men and women with preference lists for which
+ every perfect matching has a weak instability; or give an algorithm that
+ is guaranteed to find a perfect matching with no weak instability.
+ 
+\end_layout
+
+\begin_layout Standard
+Answer:
+\end_layout
+
+\begin_layout Standard
+(a) 
+\end_layout
+
+\begin_layout Standard
+Initially all m ∈ M and w ∈ W are free
+\end_layout
+
+\begin_layout Standard
+While there is a man m who is free and hasn't propsed to every woman
+\end_layout
+
+\begin_layout Standard
+— Choose such a man m
+\end_layout
+
+\begin_layout Standard
+— If the highest-ranked woman in m's preference list to whom m has not yet
+ proposed is a tie
+\end_layout
+
+\begin_layout Standard
+— — Choose one of them to be w and the other stays in the preference list
+ as the next highest-ranked woman
+\end_layout
+
+\begin_layout Standard
+— Else if the highest-ranked woman in m's preference list to whom m has
+ not yet proposed is not a tie
+\end_layout
+
+\begin_layout Standard
+— — Let w be the highest-ranked women in m's preference list to whom m has
+ not yet proposed
+\end_layout
+
+\begin_layout Standard
+—If w is free then
+\end_layout
+
+\begin_layout Standard
+— — (m, w) become engaged
+\end_layout
+
+\begin_layout Standard
+— Else if w is currently engaged to m'
+\end_layout
+
+\begin_layout Standard
+— — If w prefers m' to m then
+\end_layout
+
+\begin_layout Standard
+— — — m remains free
+\end_layout
+
+\begin_layout Standard
+— — Else if w prefers m to m' then
+\end_layout
+
+\begin_layout Standard
+— — — (m, w) become engaged
+\end_layout
+
+\begin_layout Standard
+— — — m' becomes free
+\end_layout
+
+\begin_layout Standard
+— —Endif
+\end_layout
+
+\begin_layout Standard
+— Endlif
+\end_layout
+
+\begin_layout Standard
+Endwhile
+\end_layout
+
+\begin_layout Standard
+Return the set S of engaed pairs
+\end_layout
+
+\begin_layout Standard
+(b)
+\end_layout
+
+\begin_layout Standard
+Counter example:
+\end_layout
+
+\begin_layout Standard
+For simplicity, assume there's two men (m and m') and two women (w and w').
+\end_layout
+
+\begin_layout Standard
+Their preference lists are shown below:
+\end_layout
+
+\begin_layout Standard
+m prefers w to w'
+\end_layout
+
+\begin_layout Standard
+m' prefers w to w'
+\end_layout
+
+\begin_layout Standard
+w is indifferent between m and m'
+\end_layout
+
+\begin_layout Standard
+w' is indifferent between m and m'
+\end_layout
+
+\begin_layout Standard
+There's only two possible results and both of them results in weak instability.
+\end_layout
+
+\begin_layout Standard
+S1: (m, w') and (m', w).
+\end_layout
+
+\begin_layout Standard
+In this case, m prefers w to w', and w is indifferent between m and m'.
+ (weak instability)
+\end_layout
+
+\begin_layout Standard
+S2: (m, w) and (m', w').
+\end_layout
+
+\begin_layout Standard
+In this case, m' prefers w to w', and w is indifferent between m and m'.
+ (weak instability)
+\end_layout
+
+\begin_layout Standard
+———————
+\end_layout
+
+\begin_layout Standard
+Chapter 1 Question 8:
+\end_layout
+
+\begin_layout Standard
+For this problem, we will explore the issue of truthfulness in the Stable
+ Matching Problem and specifically in the Gale-Shapley algorithm.
+ The basic question is: Can a man or a woman end up better off by lying
+ about his or her preferences? More concretely, we suppose each participant
+ has a true preference order.
+ Now consider a woman w.
+ Suppose w prefers man m to m', but both m and m' are low on her list of
+ preferences.
+ Can it be the case that by switching the order of m and m' on her list
+ of preferences (i.e., by flasely claiming that she prefers m' to m) and running
+ the algorithm with this false preference list, w will end up with a man
+ m'' that she truly prefers to both m and m'? (We can ask the same question
+ for men, but will focus on the case of women for purposes of this question.)
+\end_layout
+
+\begin_layout Standard
+Resolve this question by doing one of the following two things:
+\end_layout
+
+\begin_layout Standard
+(a) Give a proof that, for any set of preference lists, switching the order
+ of a pair on the list cannot improve a woman's partner in the Gale-Shapley
+ algorithm; or
+\end_layout
+
+\begin_layout Standard
+(b) Give an example of a set of preference lists for which there is a switch
+ that would improve the partner of a woman who switched preferences.
+ 
+\end_layout
+
+\begin_layout Standard
+Answer:
+\end_layout
+
+\begin_layout Standard
+Counter example:
+\end_layout
+
+\begin_layout Standard
+Assume there's three men (m, m' and m'') and three women (w, w' and w'').
+\end_layout
+
+\begin_layout Standard
+Their preference lists are shown below.
+\end_layout
+
+\begin_layout Standard
+m: w > w' > w''
+\end_layout
+
+\begin_layout Standard
+m': w > w' > w''
+\end_layout
+
+\begin_layout Standard
+m'': w' > w > w''
+\end_layout
+
+\begin_layout Standard
+w': m > m'' > m'
+\end_layout
+
+\begin_layout Standard
+w'': m' > m'' > m
+\end_layout
+
+\begin_layout Standard
+Let w has two preference lists, one true and one false (so that she can
+ end up better off).
+ 
+\end_layout
+
+\begin_layout Standard
+w(true): m'' > m > m'
+\end_layout
+
+\begin_layout Standard
+w(false): m'' > m' > m
+\end_layout
+
+\begin_layout Standard
+Now, let's go through the matching process with the true list.
+ 
+\end_layout
+
+\begin_layout Standard
+PS: '–>' means propose; '==>' means the result of propose; 'X' means rejection.
+ 
+\end_layout
+
+\begin_layout Standard
+m' –> w ==> (m', w)
+\end_layout
+
+\begin_layout Standard
+m –> w ==> (m, w) ==> m' free
+\end_layout
+
+\begin_layout Standard
+m'' –> w' ==> (m'', w')
+\end_layout
+
+\begin_layout Standard
+m' –> w' ==> X
+\end_layout
+
+\begin_layout Standard
+m' –> w'' ==> (m', w'')
+\end_layout
+
+\begin_layout Standard
+So in the end, (m, w) + (m', w'') + (m'', w').
+\end_layout
+
+\begin_layout Standard
+Now, let's go through the matching process with the false list.
+ 
+\end_layout
+
+\begin_layout Standard
+m' –> w ==> (m', w)
+\end_layout
+
+\begin_layout Standard
+m –> w ==> X
+\end_layout
+
+\begin_layout Standard
+m –> w' ==> (m, w')
+\end_layout
+
+\begin_layout Standard
+m'' –> w' ==> X
+\end_layout
+
+\begin_layout Standard
+m'' –> w ==> (m'', w) ==> m' free
+\end_layout
+
+\begin_layout Standard
+m' –> w' ==> X
+\end_layout
+
+\begin_layout Standard
+m' –> w'' ==> (m', w'')
+\end_layout
+
+\begin_layout Standard
+So in the end, (m, w') + (m', w'') + (m'', w).
+ 
+\end_layout
+
+\begin_layout Standard
+By comparing the result, we see that w is now better off as she moves from
+ m to m''.
+ 
+\end_layout
+
+\begin_layout Standard
+———————
+\end_layout
+
+\begin_layout Standard
+Chapter 2 Question 4:
+\end_layout
+
+\begin_layout Standard
+Take the following list of functions and arrange them in ascending order
+ of growth rate.
+ That is, if function g(n) immediately follows function f(n) in your list,
+ then it should be the case that f(n) is O(g(n)).
+ 
+\end_layout
+
+\begin_layout Standard
+g1(n) = 
+\begin_inset Formula $2^{\sqrt{logn}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+g2(n) = 
+\begin_inset Formula $2^{n}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+g3(n) = n(log n)
+\begin_inset Formula $^{3}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+g4(n) = 
+\begin_inset Formula $n^{\frac{4}{3}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+g5(n) = 
+\begin_inset Formula $n^{logn}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+g6(n) = 
+\begin_inset Formula $2^{2^{n}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+g7(n) = 
+\begin_inset Formula $2^{n^{2}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Answer:
+\end_layout
+
+\begin_layout Standard
+g3(n) and g4(n) grow polynomial times while g1(n), g2(n), g5(n), g6(n) and
+ g7(n) grow exponential times.
+ 
+\end_layout
+
+\begin_layout Standard
+First, let's compare g3(n) and g4(n).
+ 
+\end_layout
+
+\begin_layout Standard
+g4(n) = 
+\begin_inset Formula $n*n^{\frac{1}{3}}$
+\end_inset
+
+ = 
+\begin_inset Formula $n*n^{\frac{1}{\sqrt[3]{3}}}*n^{\frac{1}{\sqrt[3]{3}}}*n^{\frac{1}{\sqrt[3]{3}}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+while 
+\end_layout
+
+\begin_layout Standard
+g3(n) = 
+\begin_inset Formula $n*(logn)^{3}$
+\end_inset
+
+= 
+\begin_inset Formula $n*logn*logn*logn$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+By ploting the graph, 
+\begin_inset Formula $n^{\frac{1}{\sqrt[3]{3}}}$
+\end_inset
+
+ grows faster than log n.
+\end_layout
+
+\begin_layout Standard
+So g3(n) < g4(n).
+ 
+\end_layout
+
+\begin_layout Standard
+Now, let's look at those that grow exponentially.
+ 
+\end_layout
+
+\begin_layout Standard
+It is obvious that both g6(n) > g2(n) and g7(n) > g2(n).
+ 
+\end_layout
+
+\begin_layout Standard
+By taking log on both g6 and g7, g6 is 
+\begin_inset Formula $2^{n}$
+\end_inset
+
+(exponential) while g7 is 
+\begin_inset Formula $n^{2}$
+\end_inset
+
+(polynomial).
+ 
+\end_layout
+
+\begin_layout Standard
+So g7(n) < g6(n).
+\end_layout
+
+\begin_layout Standard
+Also observe that g1(n) < g2(n) because 
+\begin_inset Formula $\sqrt{logn}$
+\end_inset
+
+< n.
+ 
+\end_layout
+
+\begin_layout Standard
+Now we left with g5(n).
+ 
+\end_layout
+
+\begin_layout Standard
+Base is not so important for exponential terms so g5(n) should be inbetween
+ g1(n) and g2(n).
+ 
+\end_layout
+
+\begin_layout Standard
+In conclusion, g3(n) < g4(n) < g1(n) < g5(n) < g2(n) < g7(n) < g6(n).
+ 
+\end_layout
+
+\begin_layout Standard
+———————
+\end_layout
+
+\begin_layout Standard
+Chapter 2 Question 5:
+\end_layout
+
+\begin_layout Standard
+Assume you have functions f and g such that f(n) is O(g(n)).
+ For each of the following statements, decide whether you think it is true
+ or false and give a proof or counterexample.
+ 
+\end_layout
+
+\begin_layout Standard
+(a) 
+\begin_inset Formula $log_{2}f(n)$
+\end_inset
+
+ is O(
+\begin_inset Formula $log_{2}g(n)$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+Answer: FALSE.
+ 
+\end_layout
+
+\begin_layout Standard
+When g(n) = 1 and f(n) = 2 for all n, 
+\begin_inset Formula $log_{2}g(n)$
+\end_inset
+
+ = 0.
+\end_layout
+
+\begin_layout Standard
+This means we cannot write 
+\begin_inset Formula $log_{2}f(n)$
+\end_inset
+
+ <= c * 
+\begin_inset Formula $log_{2}g(n)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+(b) 
+\begin_inset Formula $2^{f(n)}$
+\end_inset
+
+is O(
+\begin_inset Formula $2^{g(n)})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Answer: FALSE.
+\end_layout
+
+\begin_layout Standard
+When f(n) = 2n and g(n) = n, 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $2^{f(n)}$
+\end_inset
+
+= 
+\begin_inset Formula $4^{n}$
+\end_inset
+
+ and 
+\begin_inset Formula $2^{g(n)}$
+\end_inset
+
+= 
+\begin_inset Formula $2^{n}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+(c) 
+\begin_inset Formula $f(n)^{2}$
+\end_inset
+
+is O(
+\begin_inset Formula $g(n)^{2}$
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Standard
+Answer: TRUE.
+\end_layout
+
+\end_body
+\end_document
