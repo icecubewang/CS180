@@ -1,0 +1,59 @@
+Feilan Wang
+UID: 104796844
+CS180 HW4
+
+C4Q3:
+
+Suppose that A is the algorithm currently used by the company. 
+We imeediately know that the boxes in algorithm A are orderly arranged with arriving time, that is, if box b(i) in truck T(n) and it arrived earlier than box b(j), then b(j) must also be in truck T(n) or a later truck T(n + int).
+
+To show that A is optimal, we need to show that:
+If O is an optimal solution, then A stays ahead of O. 
+In simple words: 
+Prove [# of trucks in A == # of trucks in O]. 
+
+Notation: 
+boxes: {b(1), b(2), ..., b(k)}
+In A, trucks: {T(a 1), T(a 2), ..., T(a m)}; |A| = m
+In O, trucks: {T(o 1), T(o 2), ..., T(o n)}; |O| = n
+Our goal is to prove [m == n].
+The notation L{T(a i), b(j)} means: The last box in T(ai) is b(j).
+
+Note: According to company's requirement, the boxes in O are also ordered by arriving time. 
+
+The greedy rule in algorithm A guarantees that:
+for L{T(a 1), b(y)}, then L{T(o 1), b(x)} in which b(y) is equal or behind b(x).
+
+We want to prove:
+If L{T(a n), b(y)} and L{T(o n), b(x)},
+then b(y) is equal or behind b(x).
+
+Prove by Induction: 
+
+(Step1)
+For n = 1, the statement is true. (As explained in line 24-25)
+
+(Step2)
+Assume statement is true for (n-1), and now assume n > 1.
+That means:
+for L{T(a n-1), b(q)} and L{T(o n-1), b(p)},
+then b(q) is equal or behind b(p).
+
+(Step3)
+For n, by the company's requirement, 
+T(o n) = {..., b(q), ..., b(x)} and T(a n) = {..., b(y)}. 
+Since T(o n) already contains extra boxes {..., b(q)}, and it can still put more boxes {..., b(x)}, 
+that means T(a n) can also put in {..., b(x)} boxes since they are identical to those in T(o n), and T(a n) might be able to put in more boxes. 
+So, the last box in T(a n), b(y) must be at least b(x) or behind b(x). 
+
+Now, we can prove that the greedy algorithm A returns an optimal set. 
+
+By Contradiction:
+
+If A is not optimal, then an optimal set O must use less trucks. 
+That is: we must have n < m.
+Applying theorem in line 28-29, and since n < m, there is a box b(z) in A. 
+Since b(z) is in T(a n+1), and T(a n) has less or equal weight than T(o n), 
+then b(z) must also be in T(o n+1). 
+This contradicts with the assumption that O only uses n Trucks. 
+

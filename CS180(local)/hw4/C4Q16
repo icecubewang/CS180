@@ -1,0 +1,29 @@
+Feilan Wang
+UID: 104796844
+CS180 HW4
+
+C4Q16:
+
+Algorithm:
+
+Each transaction t(i) maintains its own events array E(i){all possible X} which contains of all the events X happened within the time limit. 
+	  ____________________
+t(1) |_X1_X2_X3_X4_X5_X6__|
+t(2) |_X5_X6_X7_X8_X9_X10_|
+...	  _____________________
+t(n) |_X20_X21_X22_X23_X24_|
+
+Also, for each event X(j), maintain an array count[n] such that count[j] represents the number of transactions X(j) can be in. 
+
+From t(1) to t(n)
+	From X[0] to X[X.size()-1] in current t(i), find the event X(j) with smallest positive count[j] value
+	If there's no event X(j) in t(i) with positive count[j] value
+		there does not exist such association
+	Else
+		Assign t(i) to X(j)
+		Reduce count[j] by one
+	If out of the loop
+		there does exist such association
+
+
+		

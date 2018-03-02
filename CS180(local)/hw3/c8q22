@@ -1,0 +1,8 @@
+Feilan Wang
+UID: 104796844
+CS180 HW3
+
+C8Q22:
+
+If we were given a graph G and we want to show that it has an independent set, we can firstly add a node v and connect it to every nodes exist in graph G, so that we obtain a new graph G'. This new graph G' will ensure that we will never get a result "G is not connected."
+Then, we pass in graph G' into black-box algorithm A. Since G' is connected to every other nodes in G and we did not add any other edges except edges with new node v, the given result of G' will be the same as the given result of G. In other words, we've reduced G to G'. 

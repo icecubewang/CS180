@@ -1,0 +1,33 @@
+Feilan Wang
+UID: 104796844
+CS180 HW6
+
+C5Q3:
+
+Firstly, distribute each card to be in one set S respectively, so there's total n sets, with each set Si having one card Ci.
+Associate each set S with a count, which is the number of cards it has. Initially, all sets have a count value of 1.
+Also associate each set with a bankAccount, this is the bankAccount the cards in the set corresponding to. 
+
+Pass in the set of S into following function.
+
+collectionOfS Function(S1, ..., Sn) {
+	If (only two sets passed in as inputs)
+		If (bankAccount of S1 == bankAccount of S2)
+			S1.count += S2.count
+			Remove S2 from collectionOfS
+			return collectionOfS
+	Else
+		firstHalf = Function(S1, ..., S(n/2))
+		secondHalf = Function((n/2+1), ..., Sn)
+		retSet = Function(firstHalf, secondHalf)
+		return retSet
+}
+
+Loop through the retSet
+	If any Si in retSet has count > n/2
+		YES
+	Else
+		NO
+
+
+

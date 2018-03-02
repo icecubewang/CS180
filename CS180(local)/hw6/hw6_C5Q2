@@ -1,0 +1,20 @@
+Feilan Wang
+UID: 104796844
+CS180 HW6
+
+C5Q2:
+
+Algorithm for finding significant inversion:
+
+int findSignificantInversion(seq[a1, ..., an]) {
+	if (seq.size() <= 2)
+		if (a1 > 2 * a2)
+			return 1
+		else 
+			return 0
+	int left = findSignificantInversion(seq[a1, ..., a(n/2)]);
+	seq sortedLeft = mergeSort(seq[a1, ..., a(n/2)]);
+	int right = findSignificantInversion(seq[a(n/2), ..., an]);
+	seq sortedRight = mergeSort(seq[a(n/2), ..., an]);
+	return left + right + findSignificantInversion(sortedLeft+sortedRight);
+}

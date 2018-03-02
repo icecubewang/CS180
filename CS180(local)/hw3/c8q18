@@ -1,0 +1,25 @@
+Feilan Wang
+UID: 104796844
+CS180 HW3
+
+C8Q18:
+
+Firstly, Decisive Subset Problem is in NP:
+
+If we were given a decisive set, we can check the answer in polynomial time by doing the following.
+Check the size of decisive set is at most k.
+For each issue, check if the decision of the decisive set is the same as the decision of the entire committee. 
+If for every issue, the answer is yes, then the given dicisive set is valid. Else, it is invalid. 
+
+Next, we want to prove DSP is NP-Complete:
+
+Let's focus on reducing Set Cover to DSP. 
+For each point in the Set Cover, p(i), it represents the committee's decision on issue(i, result). 
+According to the example given, we will have three points representing issue(1, yes), issue(2, no) and issue(3, yes). 
+The sets in Set Cover will include each member's correct decisions. 
+That means, 
+Set m1 will contain (issue1, issue3), since m1 is correct about these 2 issue.
+Set m2 will contain (issue1, issue2).
+Set m3 will contain (issue2, issue3).
+Set m4 will contain (issue3). 
+If we can find a decisive set of size at most k, then its coresponding sets will be the answer for Set Cover. 

@@ -1,0 +1,15 @@
+Feilan Wang
+UID: 104796844
+CS180 HW3
+
+C8Q31:
+
+Firstly, Undirected Feedback Set Problem is in NP:
+
+If we were given a graph G and k nodes to be removed from k, we can simply check that whether the graph G' after removing all the k nodes still contains any cycles in polynomial time. 
+
+Next, we want to prove UFSP is NP-Complete:
+
+Let's focus on reducing Vertex Cover to UFSP.
+For every undirected edge connecting node u and v in graph G, we now replace it with two directed edges, one from u to v and one from v to u. This gives us a new graph Gnew. 
+Since a feedback set contains k nodes which after they are removed from G, G becomes acyclic. So after we change every edge to a cycle (every two nodes form a cycle), every edge must have at least one nodes inside the feedback set. This gives us the answer for Set Cover for undirected graph G. 

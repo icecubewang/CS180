@@ -1,0 +1,22 @@
+Feilan Wang
+UID: 104796844
+CS180 HW6
+
+C5Q5:
+
+Recursive function:
+------
+Maintain a set of visibleLines(L1, ..., Ln) and initially set it to NULL set.
+Label the lines according to increasing gradient a(i). 
+If n == 3, add L1 and L3 to visibleLines.
+	If L2 meets the L1 at x1 and meets L3 at x2 and x1 >= x2
+		add L2 to visibleLines
+Return visibleLines
+------
+Divide the input array into two halfs: LEFT and RIGHT.
+visibleLeft = Call Recursive function on LEFT.
+visibleRight = Call Recursive function on RIGHT. 
+Merge visibleLeft with visibleRight with increasing gradient. 
+Call Recursive function on merged(visibleLeft, visibleRight) and return it. 
+
+

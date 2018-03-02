@@ -1,0 +1,19 @@
+Feilan Wang
+UID: 104796844
+CS180 HW4
+
+C4Q30:
+
+Notice that each nodes in Z and not in X has degree greater or equals to 3. 
+This is because, if it has a degree of 2, then according to triangle inequality rule and the fact that each pair of nodes is joined by an edge, we can replace the two edges with one that joins the two neighboring nodes. 
+
+Also, notice that the degree sum of an n-node tree is 2*n-2. 
+This means: 
+(# of nodes in X) >= (# of nodes in Z && not in X)
+Simply, |Z-X| <= k or |Z| <= 2k
+
+So to find the minimum Steiner tree in Z, there's at most (n choose 2k) possible ways ==> O(n^(O(k))
+
+
+
+

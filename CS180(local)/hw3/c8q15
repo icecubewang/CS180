@@ -1,0 +1,28 @@
+Feilan Wang
+UID:104796844	
+CS180 HW3
+
+C8Q15:
+
+Firstly, Nearby Electromagnetic Observation Problem is in NP:
+
+If we were given a set of locations L', we can check the answer in polynomial time by doing the following. 
+Go through every set of (F(i), L(i)), if location(x) in L' is found in L(i), we add the compliment of F(i) to the list of frequencies that are not blocked. Let's call this list LOF. 
+After going through all the sets of (F(i),L(i)), we check if LOF contains frequencies from 1 to n. 
+This shows that we can check Nearby Electromagnetic Observation Problem in polynomial time. 
+
+Next, we want to prove NEOP is NP-Complete: 
+
+Let's focus on reducing Set Cover to NEOP. 
+Consider each point in the Set Cover as a frequency in NEOP. 
+For each set in in the Set Cover, it represents a location l(i) and whatever points it covers represents the frequencies that location l(i) does not block. 
+
+For example, 
+There will be one set l(1) which contains points(f4).
+There will be one set l(2) which contains points(f3, f4).
+There will be one set l(3) which contains points().
+There will be one set l(4) which contains points(f1, f2).
+
+If we can find a sufficient set of size k in NEOP, then we can find an equivalent answer for Set Cover. 
+
+This means NEOP is at least as hard as Set Cover, and since Set Cover is NP-Complete, NEOP is also NP-Complete. 

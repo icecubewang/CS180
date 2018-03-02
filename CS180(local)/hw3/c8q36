@@ -1,0 +1,14 @@
+Feilan Wang
+UID: 104796844
+CS180 HW3
+
+C8Q36:
+
+First, Daily Special Scheduling Problem is in NP:
+
+Given an order of making the k daily specials, we can check that the amount of money spent on buying the ingredients is greater or smaller than x in polynomial time. 
+
+Next, we want to prove that Hamiltonian Path reduces to DSSP:
+
+Suppose we have a directed graph G with n nodes and m edges. Each node represents a daily special. And each egde represents an ingredient. Each special requires one unit of each ingredients. 
+Then, there is a Hamiltonian path in G if and only if there is a way to schedule all specials at a cost of 2m-(n-1). We can save money on the n-1 ingredients that correspond to edges on the path. 

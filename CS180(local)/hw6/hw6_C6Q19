@@ -1,0 +1,31 @@
+Feilan Wang
+UID: 104796844
+CS180 HW6
+
+C6Q19:
+
+bool isInterleaving (string s, string x, string y) {
+	Set three pointers ps, px, py each point to the starting position of s, x, y
+	For (ps from s[0] to s[s.size()-1])
+		If (ps == px && ps != py)
+			If (px is out of bound)
+				return false
+			Else
+				px++
+		If (ps == py && ps != px)
+			If (py is out of bound)
+				return false
+			Else
+				py++
+		If (ps == px && ps == py)
+			If (px is out of bound)
+				py++
+			Else if (py is out of bound)
+				px++
+			Else
+				px++
+		If(both px and py are out of bound)
+			px = starting position of x
+			py = starting position of y
+	Return true
+}

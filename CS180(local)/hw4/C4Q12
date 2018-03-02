@@ -1,0 +1,32 @@
+Feilan Wang
+UID: 104796844
+CS180 HW4
+
+C4Q12:
+
+(a) The claim is FALSE.
+	Counter-example:
+	(b1, t1) = (10, 1) and (b2, t2) = (50, 1), and suppose r = 40.
+	There exist a valid schedule (s1, s2) even when s2 does not satisfies the claim, 
+	because (50 !<= 40 * 1). 
+
+(b) Sort the streams in increasing order of b(i)/t(i)	//main factor that affects runtime
+	Initially, btotal = 0 and ttotal = 0
+	from i = 0 to i = n
+		btotal += b(i)
+		ttotal += t(i)
+	if btotal / ttotal <= r
+		there exists a valid schedule
+	else 
+		there does not exist a valid schedule
+
+	Runtime: O(n^2)
+
+	Proof:
+	Since we rearranged the streams in increasing order of b(i)/t(i), 
+	as i increases, the value of b(i)/t(i) will only increase. 
+	So when i == n, the value of b(i)/t(i) reaches maximum. 
+	And if this maximum is still smaller than the parameter r, 
+	that means all the previous instance will be smaller than r. 
+
+

@@ -1,0 +1,41 @@
+Feilan Wang
+UID: 104796844
+CS180 HW4
+
+C4Q7:
+
+Polynomial-time algorithm A:
+
+Sort the Jobs {J(1), J(2), ..., J(n)} according to decreasing f(i). 
+This takes at most O(n^2) ==> polynomial. 
+This is the schedule that will yield a smallest completion time schedule. 
+
+Proof:
+
+We need to show that A produces the set with smallest completion time. 
+
+A schedule O has an inversion if switch J(i) with J(j) will yield a shorter completion time. 
+
+Since O != A, there must be at least an adjacent pair of jobs which the orders are switched.  
+Let's consider such a pair as shown below.
+J(i): p(i), f(i) 
+J(j): p(j), f(j)
+Let's say, in A, J(i) is started before J(j), which means f(i) > f(j). 
+On the other hand, in O, J(j) is started before J(i).
+
+Total time taken for A, T(A) = p(i) + max(p(j) + f(j)), f(i))
+Total time taken for O, T(O) = p(j) + max(p(i) + f(i)), f(j)) 
+					   		 = p(j) + p(i) + f(i) 				[Since f(i) > f(j)]
+
+If p(j) + f(j) >= f(i), T(A) = p(i) + p(j) + f(j)
+In this case,
+Minus p(i) + p(j) on both T(O) and T(A),
+we get T(A) - p(i) - p(j) = f(j) < f(i) = T(O) - p(i) - p(j)
+==> T(A) < T(O)
+
+If p(j) + f(j) <= f(i), T(A）= p(i) + f(i) < p(j) + p(i) + f(i) = T(O)
+==> T(A) < T(O)
+
+This shows that, switching the order of J(i) and J(j) in O according to larger f starts first will result in a shorter completion time. 
+
+Eventually, after there's no more switching, that is the optimal solution with smallest completion time, which is exactly how we define A. 
