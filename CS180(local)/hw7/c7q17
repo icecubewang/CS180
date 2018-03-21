@@ -1,0 +1,30 @@
+Feilan Wang
+CS 180
+HW7
+
+C7Q17:
+
+Assume that there are total m possible paths from s to t in the undestroyed network, where m >= k. 
+Keep a set of reachableNodes from s and initilize it to empty set. 
+
+Select any path from the m possible paths. Let it be P. 
+	ping(midpoint of P). 
+	If reports that no path currently exists,
+		Break out of the loop when P lefts with 1 node.
+		Let P = starting node of P to midpoint of P. 
+		Go to line 11.
+	Else if reports a path or multiple paths from s to the point,
+		Record down the paths by adding all the nodes along the paths into reachableNodes.
+		Break out of the loop when P lefts with 1 node.
+		Let P = midpoint of P to ending node of P.
+		Go to line 11. 
+	Go to line 10 with another possible paths.
+	Break out of the loop after k times. 
+Return (V - reachableNodes - s - t).
+
+Runtime:
+Since we are doing binary search for k iterations, runtime will be k(logn).
+
+
+
+

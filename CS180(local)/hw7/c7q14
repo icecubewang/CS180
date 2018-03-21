@@ -1,0 +1,46 @@
+Feilan Wang
+CS 180
+HW7 
+
+C7Q14:
+
+(a) 
+We can convert the graph G into a maxflow graph G' and then run the Ford-Fulkerson Algorithm on the G'. 
+
+Here's how to do the conversion:
+Create two nodes, source s and sink t. 
+Assign directed edges from s to every node in X with the capacity of 1. 
+For every edges originally in G, we assign them a capacity of 1 too. 
+We also assign each nodes in S an edge to t with a capacity of |X|. 
+//|X| = # of nodes in X. 
+
+There exist an evacuation route if and only if the maximum flow of G' equals to sum of the capacity of the edges out of source, s. 
+This algorithm will have the runtime of Ford-Fulkerson Algorithm, which is polynomial. 
+
+(b)
+For each node N (exclude s and t), turn them into two nodes, N1 and N2, with a directed edge between them, and assign the edge with capacity of 1.
+
+N 
+becomes
+N1 --> N2
+
+In this case, if any nodes was visited more than once, the maximum flow of G' will be smaller than the capacity of the edges out of s. 
+
+Example:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Blue nodes = X, Black nodes = S. 

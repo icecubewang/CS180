@@ -1,0 +1,22 @@
+Feilan Wang
+CS 180
+HW7
+
+C7Q29:
+
+This problem can be solved using min-cut method.
+To start, let's create an undirected graph G(V,E), with the vertices representing software applications.
+Let's call them V1, V2, ..., Vn, where Vi corresponds to application i. 
+There is a special vertex t. 
+If applications i and j have an associated value Xij, then we have an edge between Vi and Vj of capacity Xij. 
+For every vertex Vi, i != 1, we have an edge (Vi, t) of capacity b(Vi).
+We can say that V1 - t min-cut will give desired answer. 
+Let X be such a cut. 
+So, V1 is in X and t is not in X. 
+Capacity of X = sum of Xij (for Vi,Vj in X) - sum of b(Vi) (for Vi not in X) + sum of b(V). 
+This is same as expense minus benefit of moving applications which are not in set X.
+Thus, finding a mincut is same as finding the set of applications for which expense minus benefit is minimized or benefit minus expense is maximized. 
+
+
+
+

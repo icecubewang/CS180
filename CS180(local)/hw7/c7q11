@@ -1,0 +1,38 @@
+Feilan Wang
+CS 180
+HW7 
+
+C7Q11:
+
+The statement is false. 
+
+Such simplified variant of the Ford-Fulkerson algorithm does not always compute a solution that is at least 1/b times the maximum-flow value. 
+In fact, the flow value calculated by Forward-Edge-Only Algorithm can varies depend on the order of the augmenting paths chosen. 
+
+Counter-example:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+All edge capacities are 1 and the maximum flow is N in a N*N grid. 
+In this case, the maximum flow is 3 since it is a 3*3 grid. 
+Assume if our first choice is a path like the one shown in orange. 
+Now, we cannot choose any other augmenting path of forward-edges with positive residual capacity. 
+Hence, the resulting s-t flow has a value of 1. It is clear that the ratio is not bounded by any absolute constant b, as depending on the way we choose our augmenting paths, the flow value can vary from 1 to N in a N*N grid. 
+
+
+
+
